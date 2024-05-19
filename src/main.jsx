@@ -6,7 +6,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Root from './components/Root/Root';
-import Home from './Home/Home';
+import Home from './components/Home/Home';
 import AppliedJobs from './components/AppliedJobs/AppliedJobs';
 import ErrorPage from './components/ErrorPage/ErrorPage';
 
