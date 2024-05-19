@@ -13,11 +13,11 @@ const FeaturedJobs = () => {
     return (
         <div>
             <div className="max-w-[650px] mx-auto mt-10">
-                <h2 className='text-5xl font-bold text-center'>Featured Jobs: {jobs.length}</h2>
+                <h2 className='text-3xl lg:text-5xl font-bold text-center'>Featured Jobs: {jobs.length}</h2>
                 <p className="mt-4 text-center">Explore thousands of job opportunities with all the information you need. Its your future
                 </p>
             </div>
-            <div className="mt-8">
+            <div className="mt-8 grid md:grid-cols-2 grid-cols-1 gap-6">
                 {
                     jobs.map(job => <Job key={job.id} job={job} />)
                 }
