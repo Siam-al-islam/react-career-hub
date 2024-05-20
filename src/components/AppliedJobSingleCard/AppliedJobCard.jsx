@@ -3,7 +3,7 @@ const AppliedJobCard = ({ job }) => {
     return (
         <div className="flex md:flex-row flex-col items-center gap-8 p-6 rounded-lg border border-gray-300">
             <img className="h-12 w-[145px]" src={logo} alt="" />
-            <div className="flex  md:flex-row flex-col items-center justify-between w-full">
+            <div className="flex md:flex-row flex-col items-center justify-between w-full">
                 <div>
                     <h2 className="font-bold text-2xl">{job_title}</h2>
                     <h3 className="font-thin mt-2">{company_name}</h3>
