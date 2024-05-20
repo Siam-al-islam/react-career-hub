@@ -10,7 +10,7 @@ const Banner = () => {
                 </div>
             </div>
             <div>
-                <img src="/images/user.png" alt="" />
+                <img src="images/user.png" alt="" />
             </div>
         </div>
     );
