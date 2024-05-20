@@ -1,5 +1,7 @@
+import { Link } from "react-router-dom";
+
 const Job = ({ job }) => {
-    const { logo, job_title, company_name, remote_or_onsite, location, job_type, salary, job_description, job_responsibility, educational_requirements, experiences, contact_information } = job;
+    const { id, logo, job_title, company_name, remote_or_onsite, location, job_type, salary, job_description, job_responsibility, educational_requirements, experiences, contact_information } = job;
 
     return (
         <div className="border border-gray-200 md:p-10 p-6 rounded-lg">
@@ -20,7 +22,9 @@ const Job = ({ job }) => {
                     <h3 className="text-xl text-[#757575]">{salary}</h3>
                 </div>
             </div>
-            <button className="text-white font-bold bg-[#9873FF] px-5 py-3 rounded-lg mt-7">View Details</button>
+            <Link to={`/job/${id}`}>
+                <button className="text-white font-bold bg-[#9873FF] px-5 py-3 rounded-lg mt-7">View Details</button>
+            </Link>
         </div>
     );
 };
