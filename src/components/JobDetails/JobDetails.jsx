@@ -1,21 +1,22 @@
-import { Link, useLoaderData, useParams } from "react-router-dom";
+import { useLoaderData, useParams } from "react-router-dom";
 
 const JobDetails = () => {
     const jobs = useLoaderData();
     const { id } = useParams();
-    jobs.find(job => job.id == id);
+    const job = jobs.find(job => job.id == id);
+    const { job_title, company_name, location, salary, job_description, job_responsibility, educational_requirements, experiences, contact_information } = job;
 
     return (
         <div>
             <div className="bg-[#9873ff10] bg-[url('/images/bg1.png')] bg-no-repeat bg-bottom md:py-28 py-12">
-                <h2 className="text-3xl font-extrabold text-center">Job Details of: {id}</h2>
+                <h2 className="text-3xl font-extrabold text-center"> Details of {job_title}</h2>
             </div>
             <div className="flex md:flex-row flex-col gap-6 md:mt-20 mt-5">
                 <div className="space-y-6 md:w-2/3 w-full">
-                    <p><b>Job Description:</b> </p>
-                    <p><b>Job Responsibility:</b> </p>
-                    <p><b>Educational Requirements:</b></p>
-                    <p><b>Experiences:</b></p>
+                    <p><b>Job Description: </b>{job_description}</p>
+                    <p><b>Job Responsibility: </b>{job_responsibility}</p>
+                    <p><b>Educational Requirements: </b>{educational_requirements}</p>
+                    <p><b>Experiences: </b>{experiences}</p>
                 </div>
                 <div className="md:w-1/3 w-full  ">
                     <div className="bg-[#7e8ffe1b] rounded-lg p-7">
@@ -24,11 +25,11 @@ const JobDetails = () => {
                         <div className="space-y-4">
                             <div className="flex item-center gap-2">
                                 <img src="/icons/money.png" alt="" />
-                                <p><b>Salary: </b></p>
+                                <p><b>Salary: </b>{salary}</p>
                             </div>
                             <div className="flex item-center gap-2">
-                                <img src="/icons/calendar.png" alt="" />
-                                <p><b>Job Title: </b></p>
+                                <img className="h-6" src="/icons/calendar.png" alt="" />
+                                <p><b>Job Title: </b>{job_title}</p>
                             </div>
                         </div>
 
@@ -37,15 +38,15 @@ const JobDetails = () => {
                         <div className="space-y-4">
                             <div className="flex item-center gap-2">
                                 <img src="/icons/phone.png" alt="" />
-                                <p><b>Phone: </b></p>
+                                <p><b>Phone: </b>{contact_information.phone}</p>
                             </div>
                             <div className="flex item-center gap-2">
                                 <img src="/icons/email.png" alt="" />
-                                <p><b>Email: </b></p>
+                                <p><b>Email: </b>{contact_information.email}</p>
                             </div>
                             <div className="flex item-center gap-2">
-                                <img src="/icons/Location2.png" alt="" />
-                                <p><b>Address: </b></p>
+                                <img className="h-6" src="/icons/Location2.png" alt="" />
+                                <p><b>Address: </b>{contact_information.address}</p>
                             </div>
                         </div>
                     </div>
